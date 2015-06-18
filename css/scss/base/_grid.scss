@@ -9,7 +9,22 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1170px;
-  padding: 0 10px;
+  padding: 60px 10px;
+  overflow: hidden;
+}
+
+header {
+  background: #FFF;
+  padding-top:30px;
+  padding-bottom:30px;
+  .container {
+    padding: 0px 10px;
+  }
+  h1 {
+    font-size:25px;
+    line-height: 1.4;
+    margin:0 1.5%;
+  }
 }
 
 .hidden {
@@ -99,6 +114,34 @@ body.platform-plan {
   .panel-cont {
     padding-left:30px;
     padding-right:30px;
+  }
+}
+
+.total-wrap {
+  display:none;
+}
+
+.pricing-col {
+  .panel {
+
+    &.focus-panel {
+      box-shadow: 0 0 8px rgba(43, 164, 239, 0.4);
+      border: 1px solid #2ba4ef;
+
+      .total-wrap {
+        display: block;
+      }
+    }
+  }
+}
+
+.production-account {
+  .col-summary {
+    .panel {
+      opacity:1!important;
+      box-shadow: 0 0 8px rgba(43, 164, 239, 0.4);
+      border: 1px solid #2ba4ef;
+    }
   }
 }
 
@@ -407,10 +450,6 @@ ul.keys {
 
   $unit: 6.2056333%; // Width of each grid column unit
   $margin: 2.1277%; // Margin between the grid columns
-
-  .container {
-    padding: 0 10px;
-  }
 
   .group {
     margin-left: -$margin;

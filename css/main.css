@@ -350,7 +350,19 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1170px;
-  padding: 0 10px; }
+  padding: 60px 10px;
+  overflow: hidden; }
+
+header {
+  background: #FFF;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  header .container {
+    padding: 0px 10px; }
+  header h1 {
+    font-size: 25px;
+    line-height: 1.4;
+    margin: 0 1.5%; }
 
 .hidden {
   display: none; }
@@ -411,6 +423,20 @@ body.platform-plan .domains-panel .included {
   .panel .panel-cont {
     padding-left: 30px;
     padding-right: 30px; }
+
+.total-wrap {
+  display: none; }
+
+.pricing-col .panel.focus-panel {
+  box-shadow: 0 0 8px rgba(43, 164, 239, 0.4);
+  border: 1px solid #2ba4ef; }
+  .pricing-col .panel.focus-panel .total-wrap {
+    display: block; }
+
+.production-account .col-summary .panel {
+  opacity: 1 !important;
+  box-shadow: 0 0 8px rgba(43, 164, 239, 0.4);
+  border: 1px solid #2ba4ef; }
 
 .pricing-col {
   margin: 0 1.5%;
@@ -626,9 +652,6 @@ ul.keys {
 .span12 {
   display: block;
   margin-bottom: 20px; }
-
-.container {
-  padding: 0 10px; }
 
 .group {
   margin-left: -2.1277%; }

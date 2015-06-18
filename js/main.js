@@ -117,6 +117,16 @@ function sliderValue(sliderName, slideVal) {
     
 }
 
+function configFocus(){
+    $('.col-config').find('.panel').addClass('focus-panel');
+    $('.col-summary').find('.panel').removeClass('focus-panel').css('opacity', 0.5);
+}
+
+function summaryFocus(){
+    $('.col-config').find('.panel').removeClass('focus-panel');
+    $('.col-summary').find('.panel').addClass('focus-panel').css('opacity', '');
+}
+
 function accountType() {
 
 	if ($('.phi-checkbox').is(':checked')) {
@@ -147,6 +157,7 @@ function accountType() {
             domains = 0;
 
             $('.container').addClass('production-account');
+            summaryfocus();
 		} else {
             $('.container').removeClass('production-account');
         }
@@ -191,6 +202,7 @@ $(function() {
 
     		if (ui.value === 11) {
     			$(".containers-val").text( 'I need more' );
+                configFocus();
     			if (!$(".need-more").hasClass('container-show')) {
     				$(".need-more").addClass('container-show');
     				$(".containers-panel").addClass('showing');
@@ -198,6 +210,7 @@ $(function() {
     			}
     		} else {
     			$(".containers-val").text( ui.value );
+                summaryFocus();
     			if ($(".need-more").hasClass('container-show')) {
     				$(".need-more").removeClass('container-show');
     				$(".containers-panel").removeClass('showing');
@@ -218,60 +231,70 @@ $(function() {
             $('.disk-keys .key-'+ui.value).addClass('selected-key');
     		if (ui.value === 1) {
     			$(".disk-val").text( '200GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 2) {
     			$(".disk-val").text( '400GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 3) {
     			$(".disk-val").text( '600GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 4) {
     			$(".disk-val").text( '800GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 5) {
     			$(".disk-val").text( '1TB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 6) {
     			$(".disk-val").text( '1TB + 200GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 7) {
     			$(".disk-val").text( '1TB + 400GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 8) {
     			$(".disk-val").text( '1TB + 600GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 9) {
     			$(".disk-val").text( '1TB + 800GB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 10) {
     			$(".disk-val").text( '2TB' );
+                summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
@@ -279,6 +302,7 @@ $(function() {
     		} else {
     			$(".disk-val").text( 'I need more' );
     			$(".swap-text").text( 'Need more disk space?' );
+                configFocus();
     			if (!$(".need-more").hasClass('disk-show')) {
     				$(".need-more").addClass('disk-show');
     				$(".disk-panel").addClass('showing');
@@ -297,12 +321,14 @@ $(function() {
             $('.domains-keys li').removeClass('selected-key');
             $('.domains-keys .key-'+ui.value).addClass('selected-key');
     		if (ui.value === 11) {
+                configFocus();
     			$(".domain-val").text( 'I need more' );
     			$(".need-more").addClass('domains-show');
     			$(".swap-text").text( 'Need more domains?' );
     			$(".summary-domain").text('Unknown');
     			$(".summary-domain-value").text('Contact us');
     		} else {
+                summaryFocus();
     			$(".domain-val").text( ui.value );
     			$(".summary-domain").text( ui.value );
     			
