@@ -1,0 +1,93 @@
+//**
+// Responsive Styles
+//**
+
+@include responsive(1000px) {
+	.pricing-col, .pricing-col.col-summary {
+		width:47%;
+	}
+	.pricing-col:first-of-type {
+		width:97%;
+	}
+
+	.production-account {
+
+	  .col-summary {
+	    width:97%;
+	  }
+	}
+}
+
+@include responsive(600px) {
+
+	.pricing-col {
+		margin:0;
+		border-radius:0;
+		border-bottom:none;
+
+		.panel {
+			border-bottom:none;
+			border-radius:0;
+			box-shadow:none;
+			.pricing-title {
+				border-radius:0;
+			}
+		}
+
+		&:first-of-type {
+			border-radius: 3px 3px 0 0;
+			.panel {
+				border-radius: 3px 3px 0 0;
+				.pricing-title {
+					border-radius: 3px 3px 0 0;
+				}
+			}
+		}
+
+		&:last-of-type {
+			.panel {
+				border-bottom:1px solid #e5e5e5;
+				border-radius: 0 0 3px 3px;
+			}
+			margin-bottom:30px;
+		}
+	}
+
+	.production-account {
+		.col-summary {
+			.key-overview {
+				width:100%;
+			}
+
+			.production-btn {
+				width: 100%;
+				
+				.button {
+					width:100%;
+				}
+			}
+		}
+	}
+}
+
+@include responsive(760px) {
+	.pricing-col {
+		width:97%!important;
+	}	
+}
+
+@include responsive(420px) {
+	.pricing-col {
+		width:100%!important;
+		margin:0!important;
+	}	
+}
+
+
+
+@include responsive($small-break) {
+  // e.g. iPhone, mobile
+  body {
+    overflow-x: hidden;
+  }
+}

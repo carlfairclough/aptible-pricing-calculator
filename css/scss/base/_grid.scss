@@ -1,0 +1,450 @@
+//**
+// 12 Column Responsive Grid
+//**
+
+body {
+  background:#fcfcfc;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 0 10px;
+}
+
+.hidden {
+  display:none;
+}
+
+.container-show, .disk-show, .domains-show {
+  display:block;
+}
+
+.containers-panel.showing {
+  & + .disk-panel {
+    display:none;
+    & + .domains-panel {
+      display: none;
+    }
+  }
+}
+
+.disk-panel.showing {
+    & + .domains-panel {
+      display: none;
+  }
+}
+
+.included {
+  text-align:center;
+  border: 1px solid #DFDFDF;
+  height: 8px;
+  margin-top: 7px;
+  text-align: center;
+  line-height: 9px;
+  border-top: 0;
+  span {
+    color: #999;
+    font-size: 11px;
+    font-family: 'Inconsolata', 'Consolas', 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 9px;
+    display: inline-block;
+    width: auto;
+    padding: 0 5px;
+    background:#FFF;
+  }
+}
+
+body.platform-plan {
+  .containers-panel {
+    .included {
+      width:60%;
+    }
+  }
+
+  .disk-panel {
+    .included {
+      width:40%;
+    }
+  }
+
+  .domains-panel {
+    .included {
+      width: 30%;
+    }
+  }
+}
+
+
+.panel {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  border-radius:3px;
+
+  .pricing-title {
+    background: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 14px 0 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .panel-cont {
+    padding-left:30px;
+    padding-right:30px;
+  }
+}
+
+.pricing-col {
+  margin:0 1.5%;
+  width:28%;
+  display: inline-block;
+  float:left;
+  margin-bottom:20px;
+}
+
+.col-summary:last-of-type {
+  width:34%;
+}
+
+.panel-section {
+  padding-top:30px;
+  padding-bottom:30px;
+  border-top:1px solid #E5E5E5;
+
+  &:first-of-type {
+    border-top:none;
+  }
+}
+.panel-section h3 {
+  text-align: center;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  color: #2BA4EF;
+  line-height: 23px;
+  margin-bottom:6px;
+}
+
+.col-config .panel-section h3 {
+  color:#999999;
+  text-align:left;
+
+  span {
+    font-weight:200;
+  }
+}
+
+.col-summary .panel-section h3 {
+  text-align:left;
+  font-weight:200;
+  font-size: 22px;
+  color: #4A4A4A;
+  line-height: 27px;
+}
+
+.col-summary .panel-section {
+  div {
+    overflow: hidden;
+  }
+  ul, li {
+    list-style:none;
+    margin:0;
+    padding:0;
+    display: block;
+
+    &.hidden {
+      display:none;
+    }
+  }
+
+  li {
+    opacity: 0.55;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    color: #848484;
+    line-height: 19px;
+  }
+
+  h4 {
+    font-weight:500;
+    font-size: 14px;
+    color: #333333;
+    line-height: 16px;
+    padding-bottom:13px;
+    margin-top:33px;
+    border-bottom: 1px solid #F0F0F0;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-bottom: 13px;
+    line-height: 16px;
+    overflow: hidden;
+
+    span:first-of-type {
+      width:60%;
+      margin:0;
+    }
+
+    span:last-of-type {
+      width:40%;
+      margin:0;
+    }
+
+    span:last-of-type {
+      text-align: right;
+      text-transform: none;
+    }
+  }
+
+  ul.monthly-breakdown {
+    li {
+      span {
+        width:33.33%;
+        margin:0;
+      }
+      span:last-of-type {
+        text-align: right;
+      }
+    }
+  }
+
+  .span4 {
+  
+  }
+
+  .tot-price {
+    font-size: 48px;
+    font-weight:200;
+    color: #4A4A4A;
+    line-height: 48px;
+
+    span + span {
+      color:#9C9C9C;
+      font-size:15px;
+      font-weight:400;
+    }
+  }
+}
+
+.panel-section .ui-slider {
+  height:4px;
+  background:#D8D8D8;
+  border-radius:2px;
+  border:none;
+
+  span.ui-slider-handle {
+    height:14px;
+    width:14px;
+    border-radius:7px;
+    border:2px solid #D8D6D6;
+    box-shadow:0 0 0 1px #FFF;
+    top:-5px;
+    margin-left:-7px;
+    background:#FFF;
+    cursor:pointer;
+
+    &.ui-state-focus {
+      border:2px solid #2BA4EF;
+      background:#FFF;
+      outline: none;
+    }
+  }
+}
+
+
+ul.keys {
+  list-style:none;
+  margin:0;
+  padding:0;
+  width: 110%;
+  margin-left: -5%;
+  font-size: 11px;
+  color: #999;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 5px;
+
+  li {
+    margin:0;
+    padding:0;
+    display: inline-block;
+    width:9.09%;
+    float:left;
+    text-align: center;
+    position:relative;
+    overflow: hidden;
+
+    span {
+      background:#FFF;
+      position:absolute;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+      width:100%;
+      height:100%;
+    }
+
+    &.selected-key {
+      background:#FFF;
+      color:black;
+
+      span {
+        display:none;
+      }
+
+      &.big-key {
+        overflow: visible;
+        z-index: 999;
+        text-align: center;
+        text-indent: -8px;
+        background:#FFF;
+      }
+    }
+
+    &.key-2 {
+      content:'2';
+    }
+  }
+}
+
+
+.production-account {
+  .col-config {
+    display:none;
+    
+  }
+
+  .col-summary {
+    width:66%;
+
+    .panel, .panel-section {
+      overflow: hidden;
+    }
+
+    .non-production {
+      display:none;
+    }
+
+    .production-btn, .key-overview {
+      display:inline-block;
+      width:49%;
+      float:left;
+    }
+    .production-btn {
+      float:right;
+      .button {
+        margin-top:35px;
+        width:85%;
+      }
+    }
+  }
+}
+
+.bluebar {
+    height: 100%;
+  background-color: #2BA4EF;
+  border-radius: 4px;
+}
+
+.col-config .need-more {
+  h3 {
+    font-weight: 200;
+    font-size: 22px;
+    color: #4A4A4A;
+    line-height: 27px;
+  }
+
+  p {
+    margin-bottom:0;
+    color:#999;
+  }
+}
+
+.button {
+  text-decoration: none;
+  display: block;
+    background: #2BA4EF;
+    border-radius: 4px;
+    /* Get started now: */
+    font-weight:500;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: center;
+    border-radius:4px;
+    cursor: pointer;
+    margin-top:10px;
+  }
+
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11,
+.span12 {
+  display: block;
+  margin-bottom: 20px;
+}
+
+
+
+
+// Grid columns are stacked until the display size is greater than min-width
+
+
+  $unit: 6.2056333%; // Width of each grid column unit
+  $margin: 2.1277%; // Margin between the grid columns
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .group {
+    margin-left: -$margin;
+  }
+
+  .span1,
+  .span2,
+  .span3,
+  .span4,
+  .span5,
+  .span6,
+  .span7,
+  .span8,
+  .span9,
+  .span10,
+  .span11,
+  .span12 {
+    @include box-sizing(border-box);
+    float: left;
+    margin-bottom: 0;
+    margin-left: $margin;
+  }
+
+  @for $i from 1 through 12 {
+    .span#{$i} {
+      width: ($unit * $i) + ($margin * ($i - 1));
+
+      // remove float so span#'s don't stack inline.
+      &.break {
+        float: none;
+      }
+    }
+
+    .offset#{$i} {
+      margin-left: ($unit * $i) + ($margin * ($i +1));
+    }
+  }

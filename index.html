@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+	<!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+</head>
+<body class="platform-plan">
+
+	<h1>test</h1>
+
+	<div class="container">
+		<div class="pricing-col col-settings">
+			<div class="panel">
+				<div class="pricing-title">Development</div>
+				<div class="panel-cont">
+					<div class="panel-section panel-phi">
+						<h3>Does your company handle PHI?</h3>
+						<label class="unselectable"><input type="checkbox" name="phi" value="phi" class="phi-checkbox"><div class="fake-check"><div class="fake-check-circ"></div></div><span>NO</span><span>YES</span></label>
+					</div>
+					<div class="panel-section panel-compliance hidden">
+						<h3>Would you like Aptible to provide full-service compliance?</h3>
+						<label class="unselectable"><input type="checkbox" name="compliance" value="compliance" class="compliance-checkbox"><div class="fake-check"><div class="fake-check-circ"></div></div><span>NO</span><span>YES</span></label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pricing-col col-config">
+			<div class="panel">
+				<div class="pricing-title">Development</div>
+				<div class="panel-cont">
+					<div class="panel-section containers-panel">
+						<h3>Containers: <span class="containers-val">1</span><span class="cont-extra"></span></h3>
+						<div class="key containers-key">
+							<ul class="keys containers-keys">
+								<li class="key-1 selected-key">1</li>
+								<li class="key-2">2<span>.</span></li>
+								<li class="key-3">3<span>.</span></li>
+								<li class="key-4">4<span>.</span></li>
+								<li class="key-5">5<span>.</span></li>
+								<li class="key-6">6</li>
+								<li class="key-7">7<span>.</span></li>
+								<li class="key-8">8<span>.</span></li>
+								<li class="key-9">9<span>.</span></li>
+								<li class="key-10">10</li>
+								<li class="key-11">+</li>
+							</ul>
+						</div>
+						<div class="slider container-slider" id="container-slider"></div>
+						<div class="included hidden"><span>Included</span></div>
+					</div>
+					<div class="panel-section disk-panel">
+						<h3>Disk: <span class="disk-val">200GB</span><span class="dis-extra"></span></h3>
+						<div class="key disk-key">
+							<ul class="keys disk-keys">
+								<li class="key-1 big-key selected-key">.</li>
+								<li class="key-2">.</li>
+								<li class="key-3">.</li>
+								<li class="key-4">.</li>
+								<li class="key-5">1TB</li>
+								<li class="key-6">.</li>
+								<li class="key-7">.</li>
+								<li class="key-8">.</li>
+								<li class="key-9">.</li>
+								<li class="key-10">2TB</li>
+								<li class="key-11">+</li>
+							</ul>
+						</div>
+						<div class="slider disk-slider" id="disk-slider"></div>
+						<div class="included hidden"><span>Included</span></div>
+					</div>
+					<div class="panel-section domains-panel">
+						<h3>Domains: <span class="domain-val">1</span><span class="dom-extra"></span></h3>
+						<div class="key domains-key">
+							<ul class="keys domains-keys">
+								<li class="key-1 selected-key">1</li>
+								<li class="key-2">2<span>.</span></li>
+								<li class="key-3">3<span>.</span></li>
+								<li class="key-4">4<span>.</span></li>
+								<li class="key-5">5<span>.</span></li>
+								<li class="key-6">6</li>
+								<li class="key-7">7<span>.</span></li>
+								<li class="key-8">8<span>.</span></li>
+								<li class="key-9">9<span>.</span></li>
+								<li class="key-10">10</li>
+								<li class="key-11">+</li>
+							</ul>
+						</div>
+						<div class="slider domain-slider" id="domain-slider"></div>
+						<div class="included hidden"><span>Included</span></div>
+					</div>
+					<div class="panel-section need-more hidden">
+						<h3 class="swap-text">Need more disk space?</h3>
+						<p>Get in touch with the team and we’ll discuss your requirements and set up a bespoke plan. <a class="button" href="#">Contact us</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pricing-col col-summary">
+			<div class="panel">
+				<div class="pricing-title">Summary</div>
+				<div class="panel-cont">
+					<div class="panel-section">
+						<div class="key-overview">
+							<h3>Development Account</h3>
+							<ul class="plan-summary-list Platform-summary hidden">
+								<li>Dedicated Stack: PHI-Ready</li>
+								<li>Includes BAA</li>
+								<li>Up to 6 containers</li>
+								<li>Up to 1TB of disk space</li>
+								<li>Up to 4 domains</li>
+							</ul>
+							<ul class="plan-summary-list Development-summary">
+								<li>Shared Stack: No PHI</li>
+								<li>No base fee: pay only for usage</li>
+							</ul>
+							<ul class="plan-summary-list Production-summary hidden">
+								<li>Full-service compliance and documentation</li>
+								<li>Industry leading Workforce HIPAA training</li>
+								<li>Custom BAA, SLA</li>
+								<li>Audit support</li>
+							</ul>
+						</div>
+						<div class="non-production">
+							<h4><span class="span8">Price Breakdown</span><span class="span4">Montly cost</span></h4>
+							<div>
+								<ul class="monthly-breakdown">
+									<li><span class="span4">Base plan: </span><span class="span4 plan-val">Development </span><span class="span4 plan-price">$0</span></li>
+									<li><span class="span4">Containers: </span><span class="span4 containers-val">1 </span><span class="span4 cont-price">$0</span></li>
+									<li><span class="span4">Disk size: </span><span class="span4 disk-val">200GB </span><span class="span4 dis-price">$74</span></li>
+									<li><span class="span4">Domains </span><span class="span4 summary-domain domain-val">1 </span><span class="span4 summary-domain-value dom-price">0</span></li>
+								</ul>
+							</div>
+							<div>
+								<h4>Total</h4>
+								<div class="tot-price"><span class="tot-price-number">$573</span><span>/month</span></div>
+							</div>
+							<div class="button">Get Started Now</div>
+						</div>
+						<div class="production-btn hidden">
+							<a class="button" href="#">Get Started Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

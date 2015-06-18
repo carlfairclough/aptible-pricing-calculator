@@ -1,0 +1,152 @@
+//**
+// Form Elements
+//**
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type=text],
+input[type=email],
+input[type=phone],
+input[type=password],
+input[type=number],
+input[type=search],
+textarea {
+  @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .05));
+  @include border-radius($btn-br);
+  border: 1px solid #ccc;
+  height: $line-height;
+  outline: none;
+  padding: 5px 10px;
+  width: 300px;
+
+  &:focus {
+    border-color: $primary-color;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+}
+
+textarea {
+  height: $line-height*3;
+}
+
+form {
+  margin-bottom: $padding;
+
+  // Wrap each form input/element in a field div
+  .field {
+    margin-bottom: $padding/2;
+  }
+
+  // Notes go under the input fields
+  .hint {
+    color: $subtle-color;
+    margin-top: 5px;
+  }
+
+  // Required label
+  .is-required {
+    font-style: italic;
+  }
+
+  // Validation, add error class to the item div
+  .has-error {
+
+    // Validation reason
+    .error-description {
+      color: $danger-color;
+      margin-top: 5px;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=phone],
+    input[type=password],
+    input[type=number],
+    input[type=search],
+    textarea {
+      border-color: $danger-color;
+    }
+  }
+}
+
+.panel-section label {
+  position: relative;
+  width:122px;
+  margin:0 auto;
+  text-align: center;
+
+  span {
+    letter-spacing:2px;
+    font-size:12px;
+    top:3px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  input[type="checkbox"] {
+    display:none;
+    & + .fake-check {
+      cursor:pointer;
+      width:49px;
+      height:26px;
+      background:#CACACA;
+      display: inline-block;
+      border-radius:13px;
+      position: relative;
+
+      .fake-check-circ {
+        cursor:pointer;
+        width:30px;
+        height:30px;
+        border-radius:15px;
+        border:2px solid #D8D6D6;
+        box-shadow:0 0 0 1px #FFF;
+        background:#FFF;
+        position:absolute;
+        left:0;
+        top:-2px;
+        transition:all 0.2s ease-in-out;
+      }
+
+      & + span {
+        position: absolute;
+        color:#434547;
+        left:0;
+
+        & + span {
+          position: absolute;
+          color:#C1C6C9;
+          right:-2px;
+        }
+      }
+    }
+  }
+
+  input[type="checkbox"]:checked {
+    & + .fake-check {
+      background: #2BA4EF;
+      .fake-check-circ {
+        left:19px;
+      }
+      
+      & + span {
+        color:#C1C6C9;
+
+        & + span {
+          color:#2BA4EF;
+        }
+      }
+    }
+  }
+}
+
+input[type="checkbox"]:checked {
+  span:first-of-type {
+    float:left;
+  }
+}
