@@ -22,11 +22,44 @@
 				<h1>Aptible Pricing Calculator Prototype</h1>
 			</div>
 	</header>
+	<section class="settings">
+		<div class="container">
+			<div>
+				<div class="span4">
+					<label>Price per container ($)</label>
+					<input class="backend-settings" name="container-value" type="number" value="58.40">
+				</div>
+				<div class="span4">
+					<label>Disk Price per 200GB ($)</label>
+					<input class="backend-settings" name="disk-value" type="number" value="37">
+				</div>
+				<div class="span4">
+					<label>Price per domain ($)</label>
+					<input class="backend-settings" name="domain-value" type="number" value="18.25">
+				</div>
+			</div>
+			<div>&nbsp;</div>
+			<div>
+				<div class="span4">
+					<label>Platform included containers</label>
+					<input class="backend-settings" name="container-inc" type="number" value="4">
+				</div>
+				<div class="span4">
+					<label>Platform included disk space</label>
+					<input class="backend-settings" name="disk-inc" type="number" value="6">
+				</div>
+				<div class="span4">
+					<label>Platform included domains</label>
+					<input class="backend-settings" name="domain-inc" type="number" value="4">
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<div class="container">
 		<div class="pricing-col col-settings">
 			<div class="panel">
-				<div class="pricing-title">Development</div>
+				<div class="pricing-title"><span>1</span>Base settings</div>
 				<div class="panel-cont">
 					<div class="panel-section panel-phi">
 						<h3>Does your company handle PHI?</h3>
@@ -42,10 +75,10 @@
 
 		<div class="pricing-col col-config">
 			<div class="panel">
-				<div class="pricing-title">Development</div>
+				<div class="pricing-title"><span>2</span>Configuration</div>
 				<div class="panel-cont">
 					<div class="panel-section containers-panel">
-						<h3>Containers: <span class="containers-val">1</span><span class="cont-extra"></span></h3>
+						<h3><span class="tooltip containers-tooltip">Containers:<div class="tooltip-content">Uses general purpose instance class at AWS.  Can be customized where needed.</div></span> <span class="containers-val">1</span><span class="cont-extra"></span></h3>
 						<div class="key containers-key">
 							<ul class="keys containers-keys">
 								<li class="key-1 selected-key">1</li>
@@ -65,19 +98,19 @@
 						<div class="included hidden"><span>Included</span></div>
 					</div>
 					<div class="panel-section disk-panel">
-						<h3>Disk: <span class="disk-val">200GB</span><span class="dis-extra"></span></h3>
+						<h3><span class="tooltip containers-tooltip">Disk:<div class="tooltip-content"> Database storage</div></span> <span class="disk-val">200GB</span><span class="dis-extra"></span></h3>
 						<div class="key disk-key">
 							<ul class="keys disk-keys">
-								<li class="key-1 big-key selected-key">.</li>
-								<li class="key-2">.</li>
-								<li class="key-3">.</li>
-								<li class="key-4">.</li>
+								<li class="key-1 big-key selected-key">0.2TB<span>.</span></li>
+								<li class="key-2 big-key">400GB<span>.</span></li>
+								<li class="key-3 big-key">600GB<span>.</span></li>
+								<li class="key-4 big-key">800GB<span>.</span></li>
 								<li class="key-5">1TB</li>
-								<li class="key-6">.</li>
-								<li class="key-7">.</li>
-								<li class="key-8">.</li>
-								<li class="key-9">.</li>
-								<li class="key-10">2TB</li>
+								<li class="key-6 big-key">1.2TB<span>.</span></li>
+								<li class="key-7 big-key">1.4TB<span>.</span></li>
+								<li class="key-8 big-key">1.6TB<span>.</span></li>
+								<li class="key-9 big-key">1.8TB<span>.</span></li>
+								<li class="key-10">2TB<span>.</span></li>
 								<li class="key-11">+</li>
 							</ul>
 						</div>
@@ -85,7 +118,7 @@
 						<div class="included hidden"><span>Included</span></div>
 					</div>
 					<div class="panel-section domains-panel">
-						<h3>Domains: <span class="domain-val">1</span><span class="dom-extra"></span></h3>
+						<h3><span class="tooltip containers-tooltip">Domains:<div class="tooltip-content">any subdomains or VHosts.</div></span> <span class="domain-val">1</span><span class="dom-extra"></span></h3>
 						<div class="key domains-key">
 							<ul class="keys domains-keys">
 								<li class="key-1 selected-key">1</li>
@@ -114,7 +147,7 @@
 
 		<div class="pricing-col col-summary">
 			<div class="panel focus-panel">
-				<div class="pricing-title">Summary</div>
+				<div class="pricing-title"><span>3</span>Summary</div>
 				<div class="panel-cont">
 					<div class="panel-section">
 						<div class="key-overview">

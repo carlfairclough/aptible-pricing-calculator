@@ -92,6 +92,50 @@ body.platform-plan {
   }
 }
 
+.tooltip {
+  border-bottom:1px dashed #cfcfcf;
+  cursor:pointer;
+  position: relative;
+
+  .tooltip-content {
+    display:none;
+    position: absolute;
+    background:#333;
+    color:#FFF;
+    z-index: 999;
+    width:150px;
+    left:50%;
+    margin-left:-75px;
+    top: 140%;
+    padding: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    border-radius:4px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 3px;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-bottom: 3px solid #333;
+      top: -6px;
+      left: 50%;
+      margin-left: -2px;
+    }
+  }
+
+  &:hover, &:focus, &:active {
+    color:#333;
+
+    .tooltip-content {
+      display: block;
+    }
+  }
+}
+
 
 .panel {
   background: #fff;
@@ -104,11 +148,25 @@ body.platform-plan {
     background: #fafafa;
     border-bottom: 1px solid #f0f0f0;
     padding: 14px 0 12px;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 500;
     border-radius: 3px 3px 0 0;
+
+    span {
+      font-weight:500;
+      background:#B0B0B0;
+      color:#FFF;
+      width:23px;
+      height:23px;
+      margin-right:10px;
+      border-radius:50%;
+      display: inline-block;
+      margin-left:30px;
+      text-align: center;
+      line-height: 22px;
+    }
   }
 
   .panel-cont {
@@ -344,9 +402,9 @@ ul.keys {
 
       &.big-key {
         overflow: visible;
-        z-index: 999;
+        z-index: 800;
         text-align: center;
-        text-indent: -8px;
+        text-indent: -2px;
         background:#FFF;
       }
     }

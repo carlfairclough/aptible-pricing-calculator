@@ -7,18 +7,18 @@ $(document).ready(function(){
     var disk = 5; // 5x200GB = 1 TERABYTE INCLUDED IN PRICE
     var domains = 4; // 4 DOMAINS INCLUDED IN PRICE
 
-    containerCost = 58.4; //$58.40 per container
-    diskCost = 74; //$37 per 200GB
-    domainCost = 18.25; //$18.25 per month
+    containerCost = $('input[name="container-value"]').val(); //$58.40 per container
+    diskCost = $('input[name="disk-value"]').val(); //$37 per 200GB
+    domainCost = $('input[name="domain-value"]').val(); //$18.25 per month
 });
 
 
 
 function sliderValue(sliderName, slideVal) {
 
-    var containerCost = 58.4; //$58.40 per container
-    var diskCost = 74; //$37 per 200GB
-    var domainCost = 18.25; //$18.25 per month
+    var containerCost = $('input[name="container-value"]').val(); //$58.40 per container
+    var diskCost = $('input[name="disk-value"]').val() //$37 per 200GB
+    var domainCost = $('input[name="domain-value"]').val(); //$18.25 per month
 
     var contVal = $('#container-slider').slider( "option", "value" );
     var disVal = $('#disk-slider').slider( "option", "value" );
@@ -133,9 +133,9 @@ function accountType() {
 		//DEFAULT PRODUCT VALS 
         accountTypeName = 'Platform';
         basePrice = 499;
-        containers = 6; // 6 CONTAINERS INCLUDED IN PRICE
-        disk = 5; // 5x200GB = 1 TERABYTE INCLUDED IN PRICE
-        domains = 4; // 4 DOMAINS INCLUDED IN PRICE
+        containers = $('input[name="container-inc"]').val(); // 6 CONTAINERS INCLUDED IN PRICE
+        disk = $('input[name="disk-inc"]').val(); // 5x200GB = 1 TERABYTE INCLUDED IN PRICE
+        domains = $('input[name="domain-inc"]').val(); // 4 DOMAINS INCLUDED IN PRICE
 
         var containerIncWidth = ((containers - 1)*10) + '%';
         $('.containers-panel .included').removeClass('hidden').css({'width' : containerIncWidth});
@@ -265,28 +265,28 @@ $(function() {
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 6) {
-    			$(".disk-val").text( '1TB + 200GB' );
+    			$(".disk-val").text( '1.2TB' );
                 summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 7) {
-    			$(".disk-val").text( '1TB + 400GB' );
+    			$(".disk-val").text( '1.4TB' );
                 summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 8) {
-    			$(".disk-val").text( '1TB + 600GB' );
+    			$(".disk-val").text( '1.6TB' );
                 summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
     				$(".disk-panel").removeClass('showing');
     			}
     		} else if (ui.value === 9) {
-    			$(".disk-val").text( '1TB + 800GB' );
+    			$(".disk-val").text( '1.8GB' );
                 summaryFocus();
     			if ($(".need-more").hasClass('disk-show')) {
     				$(".need-more").removeClass('disk-show');
@@ -345,3 +345,7 @@ $(document).ready(function(){
     sliderValue();
 });
 
+$('.backend-settings').on('input', function() { 
+    sliderValue();
+    accountType();
+});

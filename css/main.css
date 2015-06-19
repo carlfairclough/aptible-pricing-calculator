@@ -405,6 +405,41 @@ body.platform-plan .disk-panel .included {
 body.platform-plan .domains-panel .included {
   width: 30%; }
 
+.tooltip {
+  border-bottom: 1px dashed #cfcfcf;
+  cursor: pointer;
+  position: relative; }
+  .tooltip .tooltip-content {
+    display: none;
+    position: absolute;
+    background: #333;
+    color: #FFF;
+    z-index: 999;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    top: 140%;
+    padding: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 4px; }
+    .tooltip .tooltip-content:before {
+      content: '';
+      position: absolute;
+      height: 3px;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-bottom: 3px solid #333;
+      top: -6px;
+      left: 50%;
+      margin-left: -2px; }
+  .tooltip:hover, .tooltip:focus, .tooltip:active {
+    color: #333; }
+    .tooltip:hover .tooltip-content, .tooltip:focus .tooltip-content, .tooltip:active .tooltip-content {
+      display: block; }
+
 .panel {
   background: #fff;
   border: 1px solid #e5e5e5;
@@ -415,11 +450,23 @@ body.platform-plan .domains-panel .included {
     background: #fafafa;
     border-bottom: 1px solid #f0f0f0;
     padding: 14px 0 12px;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 500;
     border-radius: 3px 3px 0 0; }
+    .panel .pricing-title span {
+      font-weight: 500;
+      background: #B0B0B0;
+      color: #FFF;
+      width: 23px;
+      height: 23px;
+      margin-right: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 30px;
+      text-align: center;
+      line-height: 22px; }
   .panel .panel-cont {
     padding-left: 30px;
     padding-right: 30px; }
@@ -584,9 +631,9 @@ ul.keys {
         display: none; }
       ul.keys li.selected-key.big-key {
         overflow: visible;
-        z-index: 999;
+        z-index: 800;
         text-align: center;
-        text-indent: -8px;
+        text-indent: -2px;
         background: #FFF; }
     ul.keys li.key-2 {
       content: '2'; }
