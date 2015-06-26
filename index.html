@@ -22,8 +22,9 @@
 				<h1>Aptible Pricing Calculator Prototype</h1>
 			</div>
 	</header>
-	<section class="settings">
+	<section class="settings hidden-settings">
 		<div class="container">
+			<div class="show-settings">Show/Hide settings</div>
 			<div>
 				<div class="span4">
 					<label>Price per container ($)</label>
@@ -56,28 +57,28 @@
 		</div>
 	</section>
 
-	<div class="container">
+	<div class="container main-content">
 		<div class="pricing-col col-settings">
 			<div class="panel">
 				<div class="pricing-title"><span>1</span>Base settings</div>
 				<div class="panel-cont">
 					<div class="panel-section panel-phi">
 						<h3>Does your company handle PHI?</h3>
-						<label class="unselectable"><input type="checkbox" name="phi" value="phi" class="phi-checkbox"><div class="fake-check"><div class="fake-check-circ"></div></div><span>NO</span><span>YES</span></label>
+						<label class="unselectable" id="PHIcheck"><input type="checkbox" name="phi" value="phi" class="phi-checkbox"><div class="fake-check"><div class="fake-check-circ"></div></div><span>NO</span><span>YES</span></label>
 					</div>
 					<div class="panel-section panel-compliance hidden">
 						<h3>Would you like Aptible to provide full-service compliance?</h3>
-						<label class="unselectable"><input type="checkbox" name="compliance" value="compliance" class="compliance-checkbox"><div class="fake-check"><div class="fake-check-circ"></div></div><span>NO</span><span>YES</span></label>
+						<label class="unselectable" id="FSCcheck"><input type="checkbox" name="compliance" value="compliance" class="compliance-checkbox"><div class="fake-check"><div class="fake-check-circ"></div></div><span>NO</span><span>YES</span></label>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="pricing-col col-config">
-			<div class="panel">
+			<div class="panel animate-5">
 				<div class="pricing-title"><span>2</span>Configuration</div>
 				<div class="panel-cont">
-					<div class="panel-section containers-panel">
+					<div class="panel-section slider-section containers-panel">
 						<h3><span class="tooltip containers-tooltip">Containers:<div class="tooltip-content">Uses general purpose instance class at AWS.  Can be customized where needed.</div></span> <span class="containers-val">1</span><span class="cont-extra"></span></h3>
 						<div class="key containers-key">
 							<ul class="keys containers-keys">
@@ -95,9 +96,9 @@
 							</ul>
 						</div>
 						<div class="slider container-slider" id="container-slider"></div>
-						<div class="included hidden"><span>Included</span></div>
+						<div class="included hidden" id="container-inc-scale"><span>Included</span></div>
 					</div>
-					<div class="panel-section disk-panel">
+					<div class="panel-section slider-section disk-panel">
 						<h3><span class="tooltip containers-tooltip">Disk:<div class="tooltip-content"> Database storage</div></span> <span class="disk-val">200GB</span><span class="dis-extra"></span></h3>
 						<div class="key disk-key">
 							<ul class="keys disk-keys">
@@ -115,9 +116,9 @@
 							</ul>
 						</div>
 						<div class="slider disk-slider" id="disk-slider"></div>
-						<div class="included hidden"><span>Included</span></div>
+						<div class="included hidden" id="disk-inc-scale"><span>Included</span></div>
 					</div>
-					<div class="panel-section domains-panel">
+					<div class="panel-section slider-section domains-panel">
 						<h3><span class="tooltip containers-tooltip">Domains:<div class="tooltip-content">any subdomains or VHosts.</div></span> <span class="domain-val">1</span><span class="dom-extra"></span></h3>
 						<div class="key domains-key">
 							<ul class="keys domains-keys">
@@ -135,7 +136,7 @@
 							</ul>
 						</div>
 						<div class="slider domain-slider" id="domain-slider"></div>
-						<div class="included hidden"><span>Included</span></div>
+						<div class="included hidden" id="domain-inc-scale"><span>Included</span></div>
 					</div>
 					<div class="panel-section need-more hidden">
 						<h3 class="swap-text">Need more disk space?</h3>
@@ -145,7 +146,7 @@
 			</div>
 		</div>
 
-		<div class="pricing-col col-summary">
+		<div class="pricing-col col-summary animate-5">
 			<div class="panel focus-panel">
 				<div class="pricing-title"><span>3</span>Summary</div>
 				<div class="panel-cont">
@@ -154,7 +155,7 @@
 							<h3>Development Account</h3>
 							<ul class="plan-summary-list Platform-summary hidden">
 								<li>Dedicated Stack: PHI-Ready</li>
-								<li>Includes BAA</li>
+								<li><b><u>Includes :</u></b><br> BAA</li>
 								<li>Up to 6 containers</li>
 								<li>Up to 1TB of disk space</li>
 								<li>Up to 4 domains</li>

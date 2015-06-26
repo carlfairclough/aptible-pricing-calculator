@@ -10,12 +10,11 @@
 		width:97%;
 	}
 
-	.production-account {
-
-	  .col-summary {
+	  .pricing-col.col-summary.large-summary {
 	    width:97%;
 	  }
-	}
+
+
 }
 
 @include responsive(600px) {
@@ -45,6 +44,7 @@
 		}
 
 		&:last-of-type {
+			float:left;
 			.panel {
 				border-bottom:1px solid #e5e5e5;
 				border-radius: 0 0 3px 3px;

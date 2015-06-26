@@ -347,6 +347,9 @@ table {
 body {
   background: #fcfcfc; }
 
+.animate-5 {
+  transition: all ease-in-out 0.5s; }
+
 .container {
   margin: 0 auto;
   max-width: 1170px;
@@ -385,7 +388,8 @@ header {
   margin-top: 7px;
   text-align: center;
   line-height: 9px;
-  border-top: 0; }
+  border-top: 0;
+  transition: all ease-in-out 0.2s; }
   .included span {
     color: #999;
     font-size: 11px;
@@ -397,6 +401,11 @@ header {
     width: auto;
     padding: 0 5px;
     background: #FFF; }
+  .included.hidden {
+    display: block;
+    opacity: 0;
+    height: 1px;
+    margin-top: 0; }
 
 body.platform-plan .containers-panel .included {
   width: 60%; }
@@ -404,6 +413,9 @@ body.platform-plan .disk-panel .included {
   width: 40%; }
 body.platform-plan .domains-panel .included {
   width: 30%; }
+
+.plan-summary-list {
+  overflow: hidden; }
 
 .tooltip {
   border-bottom: 1px dashed #cfcfcf;
@@ -468,8 +480,13 @@ body.platform-plan .domains-panel .included {
       text-align: center;
       line-height: 22px; }
   .panel .panel-cont {
+    overflow: hidden;
     padding-left: 30px;
     padding-right: 30px; }
+  .panel .panel-phi {
+    z-index: 500;
+    position: relative;
+    background: #fff; }
 
 .total-wrap {
   display: none; }
@@ -480,10 +497,12 @@ body.platform-plan .domains-panel .included {
   .pricing-col .panel.focus-panel .total-wrap {
     display: block; }
 
-.production-account .col-summary .panel {
-  opacity: 1 !important;
-  box-shadow: 0 0 8px rgba(43, 164, 239, 0.4);
-  border: 1px solid #2ba4ef; }
+.col-summary.large-summary {
+  float: right; }
+  .col-summary.large-summary .panel {
+    opacity: 1 !important;
+    box-shadow: 0 0 8px rgba(43, 164, 239, 0.4);
+    border: 1px solid #2ba4ef; }
 
 .pricing-col {
   margin: 0 1.5%;
@@ -493,14 +512,21 @@ body.platform-plan .domains-panel .included {
   margin-bottom: 20px; }
 
 .col-summary:last-of-type {
-  width: 34%; }
+  width: 34%;
+  float: right; }
 
 .panel-section {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 34px;
   border-top: 1px solid #E5E5E5; }
   .panel-section:first-of-type {
     border-top: none; }
+  .panel-section.domains-panel {
+    padding-bottom: 45px; }
+  .panel-section.panel-compliance.hidden {
+    display: block;
+    opacity: 0;
+    padding: 0; }
 
 .panel-section h3 {
   text-align: center;
@@ -599,9 +625,10 @@ ul.keys {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 110%;
-  margin-left: -5%;
+  width: 112%;
+  margin-left: -7%;
   font-size: 11px;
+  padding-left: 2%;
   color: #999;
   display: block;
   overflow: hidden;
@@ -638,21 +665,53 @@ ul.keys {
     ul.keys li.key-2 {
       content: '2'; }
 
-.production-account .col-config {
-  display: none; }
-.production-account .col-summary {
+section.settings {
+  background: #292A2D;
+  padding-bottom: 10px;
+  height: auto;
+  overflow: hidden; }
+  section.settings.hidden-settings {
+    height: 45px; }
+  section.settings .container {
+    position: relative; }
+    section.settings .container .show-settings {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 35px;
+      color: #FFF;
+      text-decoration: underline;
+      color: #999;
+      font-family: Inconsolata, Consolas, 'Courier New', Courier, monospace; }
+  section.settings label {
+    color: #999;
+    font-family: Inconsolata, Consolas, 'Courier New', Courier, monospace; }
+  section.settings input {
+    background: #292A2D;
+    color: #cfcfcf;
+    border: 1px solid #cfcfcf; }
+    section.settings input:focus {
+      box-shadow: 0 0 0 1px #cfcfcf;
+      outline: none;
+      border-color: #cfcfcf; }
+
+.col-summary.large-summary {
   width: 66%; }
-  .production-account .col-summary .panel, .production-account .col-summary .panel-section {
+  .col-summary.large-summary .panel, .col-summary.large-summary .panel-section {
     overflow: hidden; }
-  .production-account .col-summary .non-production {
+  .col-summary.large-summary .non-production {
     display: none; }
-  .production-account .col-summary .production-btn, .production-account .col-summary .key-overview {
-    display: inline-block;
+  .col-summary.large-summary .production-btn, .col-summary.large-summary .key-overview {
     width: 49%;
-    float: left; }
-  .production-account .col-summary .production-btn {
-    float: right; }
-    .production-account .col-summary .production-btn .button {
+    float: left;
+    min-width: 200px; }
+  .col-summary.large-summary .key-overview {
+    display: inline-block;
+    min-width: 200px; }
+  .col-summary.large-summary .production-btn {
+    float: right;
+    display: none; }
+    .col-summary.large-summary .production-btn .button {
       margin-top: 35px;
       width: 85%; }
 
@@ -661,14 +720,21 @@ ul.keys {
   background-color: #2BA4EF;
   border-radius: 4px; }
 
-.col-config .need-more h3 {
-  font-weight: 200;
-  font-size: 22px;
-  color: #4A4A4A;
-  line-height: 27px; }
-.col-config .need-more p {
-  margin-bottom: 0;
-  color: #999; }
+.col-config .need-more {
+  opacity: 1;
+  transition: all ease-in-out 0.5s; }
+  .col-config .need-more.hidden {
+    opacity: 0; }
+  .col-config .need-more.container-show {
+    opacity: 1; }
+  .col-config .need-more h3 {
+    font-weight: 200;
+    font-size: 22px;
+    color: #4A4A4A;
+    line-height: 27px; }
+  .col-config .need-more p {
+    margin-bottom: 0;
+    color: #999; }
 
 .button {
   text-decoration: none;
@@ -2652,7 +2718,7 @@ a .icon-flip-vertical:before {
   .pricing-col:first-of-type {
     width: 97%; }
 
-  .production-account .col-summary {
+  .pricing-col.col-summary.large-summary {
     width: 97%; } }
 @media screen and (max-width: 600px) {
   .pricing-col {
@@ -2672,6 +2738,7 @@ a .icon-flip-vertical:before {
         .pricing-col:first-of-type .panel .pricing-title {
           border-radius: 3px 3px 0 0; }
     .pricing-col:last-of-type {
+      float: left;
       margin-bottom: 30px; }
       .pricing-col:last-of-type .panel {
         border-bottom: 1px solid #e5e5e5;
