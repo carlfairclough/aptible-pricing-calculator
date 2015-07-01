@@ -293,16 +293,16 @@ function needmoreslidersshow(show) {
             var newPanH = conH + disH + neeH;
 
             // DISABLE PREVIOUS SLIDERS
-            // $( "#container-slider" ).slider( "option", "disabled", true );
+            $( "#container-slider" ).slider( "option", "disabled", true );
 
             // SET CURRENT PANEL HEIGHT
             $('.col-config').find('.panel-cont').css({'height' : panH});
 
             // PREP NEED MORE FOR INTRO
-            $('.need-more').removeClass('hidden').css({'opacity' : 0}).addClass('hidden-slider');
+            $('.need-more').removeClass('hidden').css({'opacity' : 0});
 
             // HIDE OTHER SLIDERS
-            $('.domains-panel').animate({'opacity' : 0}, 500);
+            $('.domains-panel').animate({'opacity' : 0}, 500).addClass('hidden-slider');;
 
             // CHANGE THE HEIGHT
             window.setTimeout(function(){
@@ -319,6 +319,9 @@ function needmoreslidersshow(show) {
         } else if ($.glob.slide.dom === 11) {
 
             var newPanH = conH + disH + domH + neeH;
+
+            // DISABLE PREVIOUS SLIDERS
+            $( "#container-slider, #disk-slider" ).slider( "option", "disabled", true );
 
             // SET CURRENT PANEL HEIGHT
             $('.col-config').find('.panel-cont').css({'height' : panH});
@@ -355,6 +358,10 @@ function needmoreslidersshow(show) {
         $('.slider-section').each(function() {
           newPanH2 += $(this).outerHeight();
         });
+
+        // RE-ENABLE SLIDERS
+        // DISABLE PREVIOUS SLIDERS
+        $( "#container-slider, #disk-slider, #domain-slider" ).slider( "option", "disabled", false );
 
         // RESET HIDDEN PANELS {
         $('.hidden-panel').css({'opacity' : '', 'position' : '', 'width' : ''});
